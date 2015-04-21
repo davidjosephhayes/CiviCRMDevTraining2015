@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <menu>
   <item>
-    <path>civicrm/zipwise</path>
+    <path>civicrm/admin/zipwise</path>
     <page_callback>CRM_Devtraining_Form_Zipwise</page_callback>
     <title>Zipwise</title>
     <access_arguments>access CiviCRM</access_arguments>

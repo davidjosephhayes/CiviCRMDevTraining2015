@@ -183,7 +183,13 @@ function devtraining_civicrm_post( $op, $objectName, $objectId, &$objectRef ) {
 
 function _devtrainingFetchCountyByPostalCode($postal_code) {
 	
-	$apikey = 'nk9yg3ek00g4yyw5';
+	$apikey = CRM_Core_BAO_Setting::getItem('Zipwise', 'apikey');
+	if (empty($apikey)) {
+		CRM_Core_Error::debug_log_message(
+			'com.blackbricksoftware.devtraining - no api key setup'
+		);
+		return false;
+	}
 	$url = 'https://www.zipwise.com/webservices/zipinfo.php';
 	$querystring = http_build_query(array(
 		'key' => $apikey,
